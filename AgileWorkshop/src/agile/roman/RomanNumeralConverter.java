@@ -39,25 +39,25 @@ public class RomanNumeralConverter {
 		return resultValue;
 	}
 
+	private boolean isRomanNumberReducePrecondition(int runnerVariable) {
+		return isArrayBiggerMinimumAndRunnerBiggerOne(runnerVariable)
+				&& isLeftOfCurrentRomanCharacterBiggerThanCurrent(runnerVariable);
+	}
+
+	private boolean isArrayBiggerMinimumAndRunnerBiggerOne(int runnerVariable) {
+		return romanCharacterArray.length >= MINIMUM_LENGTH_OF_ARRAY && runnerVariable > 0;
+	}
+
+	private boolean isLeftOfCurrentRomanCharacterBiggerThanCurrent(int runnerVariable) {
+		return getArabicValueForRomanCharacter(romanCharacterArray[runnerVariable]) > getLeftRomanValue(runnerVariable);
+	}
+
 	private Integer getReductionValueBasedOnPositionInCharacterArray(int runnerVariable) {
 		return 2 * getLeftRomanValue(runnerVariable);
 	}
 
-	private boolean isRomanNumberReducePrecondition(int runnerVariable) {
-		return isArrayBiggerOneAndRunnerBiggerOne(runnerVariable)
-				&& isLeftRomanCharacterBiggerThanRight(runnerVariable);
-	}
-
-	private boolean isLeftRomanCharacterBiggerThanRight(int runnerVariable) {
-		return getArabicValueForRomanCharacter(romanCharacterArray[runnerVariable]) > getLeftRomanValue(runnerVariable);
-	}
-
 	private Integer getLeftRomanValue(int runnerVariable) {
 		return getArabicValueForRomanCharacter(romanCharacterArray[runnerVariable - 1]);
-	}
-
-	private boolean isArrayBiggerOneAndRunnerBiggerOne(int runnerVariable) {
-		return romanCharacterArray.length >= MINIMUM_LENGTH_OF_ARRAY && runnerVariable > 0;
 	}
 
 	private Integer getArabicValueForRomanCharacter(Character character) {
