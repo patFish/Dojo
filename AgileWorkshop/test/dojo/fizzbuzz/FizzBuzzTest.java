@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
 
-	FizzBuzz fizzbuzz;
+	FizzBuzz fizzbuzz1;
 	private String expectedResult;
 
 	@Before
-	public void setup() {
+	public void setup() {  
 		fizzbuzz = new FizzBuzz();
 	}
 
