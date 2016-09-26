@@ -7,7 +7,7 @@ public class FizzBuzz {
 	HashMap<Integer, String> fizzBuzzMap = new HashMap<Integer, String>();
 	{
 		fizzBuzzMap.put(2, "Foo");
-		fizzBuzzMap.put(3, "Fizz");
+		fizzBuzzMap.put(3, "Fizz");  
 		fizzBuzzMap.put(5, "Buzz");
 	}
 

@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
 
-	FizzBuzz fizzbuzz;
+	FizzBuzz fizzbuzz4;
 	private String expectedResult;
 
 	@Before
